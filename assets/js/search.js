@@ -19,13 +19,26 @@ export function search() {
 
   /* Finder de produkter der lever op til søgekriterierne */
   function searchInput(event) {
-    const searchTerm = event.target.value;
+    const category = document.querySelector("#category").value;
+    const searchTerm = event.target.value.trim().toLowerCase();
 
-    const result = products.filter((product) =>
-      product.title.includes(searchTerm)
-    );
+    if (category == "all") {
+      const result = products.filter((product) =>
+        product.title.trim().toLowerCase().includes(searchTerm)
+      );
 
-    renderResult(result);
+      renderResult(result);
+    } else {
+      /* specifik kategorier */
+      const findCategory = products.filter(
+        (product) => product.category === category
+      );
+      const result = findCategory.filter((product) =>
+        product.title.toLowerCase().trim().includes(searchTerm)
+      );
+
+      renderResult(result);
+    }
   }
 
   const input = document.querySelector("#search");
