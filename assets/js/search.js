@@ -2,17 +2,20 @@ import { fetchProducts } from "./fetch_data.js";
 import { productListTmpl } from "./templates.js";
 
 const products = await fetchProducts();
-const productContainer = document.querySelector(".productContainer");
+const productContainer = document.querySelector(".product-container");
 
 export function search() {
   /* Udskrive vores søgeresultater  */
-  function renderResult(result) {}
+  function renderResult(result) {
+    productContainer.innerHTML = "";
 
-  productContainer.innerHTML = "";
-
-  result.forEach((element) => {
-    productContainer.insertAdjacentHTML("beforeend", productListTmpl);
-  });
+    result.forEach((element) => {
+      productContainer.insertAdjacentHTML(
+        "beforeend",
+        productListTmpl(element)
+      );
+    });
+  }
 
   /* Finder de produkter der lever op til søgekriterierne */
   function searchInput(event) {
