@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Boilerplate</title>
+    <title>JS-Search</title>
 
     <link
       rel="stylesheet"
@@ -26,40 +26,27 @@
   </head>
 
   <body>
-    <!-- section [Navigation] -->
-    <nav>
-      <a href="index.html"><img src="/assets/img/logo.png" alt="logo" /></a>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a href="#">Link</a></li>
-        <li><a class="signup-btn" href="#">Sign up</a></li>
-      </ul>
+    <h1>Products</h1>
 
-      <i class="fa-solid fa-bars burgerMenuOpen"></i>
-      <i class="fa-solid fa-xmark burgerMenuClose"></i>
-    </nav>
+    <div class="search-field">
+      <select id="category">
+        <!--<option value="title">Produkt</option>-->
+        <!--<option value="category">Sportsgren</option>  -->
+        <option value="all">Alle</option>
+        <option value="Home Entertainment">Underholdning</option>
+        <option value="Electronics">Elektronik</option>
+        <option value="Home Appliances">Diverse</option>
+        <option value="Computers">Computere</option>
+        <option value="Health & Personal Care">Personlig Pleje</option>
+      </select>
 
-    <!-- Section [Hero] -->
-    <section class="hero"></section>
+      <input type="search" placeholder="Du kan søge her..." id="search" />
+      <button>Søg</button>
+    </div>
 
-    <!-- Section [name] -->
-    <section class=""></section>
+    <div class="product-container"></div>
 
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [name] -->
-    <section class=""></section>
-
-    <!-- Section [Footer] -->
-    <footer></footer>
+    <button class="btnGrid">Grid</button>
+    <button class="btnList">List</button>
   </body>
 </html>
